@@ -49,7 +49,14 @@ public class AI_DVD_Logo : MonoBehaviour, IAttackAI, IProjectile
 
     public bool CanShoot()
     {
-        throw new System.NotImplementedException();
+        if (DeathCheck())
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 
     public bool CheckValue()
@@ -113,7 +120,7 @@ public class AI_DVD_Logo : MonoBehaviour, IAttackAI, IProjectile
 
     public void Die()
     {
-        throw new System.NotImplementedException();
+        Object.Destroy(this.gameObject);
     }
 
     public void inheritDamage()
@@ -134,7 +141,7 @@ public class AI_DVD_Logo : MonoBehaviour, IAttackAI, IProjectile
 
     public void TakeDamage(float amt)
     {
-        throw new System.NotImplementedException();
+        _health -= amt;
     }
 
 
