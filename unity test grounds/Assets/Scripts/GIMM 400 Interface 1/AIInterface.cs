@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IAttackAI
+public interface  IAttackAI 
 {
     string _name { get; set; }
     float _health { get; set; } // health = vision/speed

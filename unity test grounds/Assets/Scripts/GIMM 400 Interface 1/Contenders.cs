@@ -33,7 +33,7 @@ public abstract class Contenders : IAttackAI, IProjectile
         if (_damage >= .1 || _damage <= 1)
         {
             Debug.LogException(new System.Exception("Health needs to be in between 2 and 10"));
-            return false; 
+            return false;
         }
         else if (_damage != _AttackRange / _fireRate)
         {
@@ -57,7 +57,7 @@ public abstract class Contenders : IAttackAI, IProjectile
         _Vision = _arenaRadius / (1 / _Vision);
         _AttackRange *= STANDARDMULTIPLIER;
         return true;
-        
+
     }
     public abstract void DealDamage(); //projectile applies damage on collision
     public bool DeathCheck() //boolean to check if you are dead
