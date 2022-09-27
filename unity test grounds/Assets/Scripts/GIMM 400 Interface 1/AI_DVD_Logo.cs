@@ -20,6 +20,11 @@ public class AI_DVD_Logo : MonoBehaviour, IAttackAI, IProjectile
     [SerializeField] private float projectileSpeed = 10.0f;
 
 
+    private float HEALTHMULTIPLIER = 1;
+    private float STANDARDMULTIPLIER = 1;
+
+
+
     public float _projDamage { get => _projDamage; set => _projDamage = projectileDamage; }
     public string _name { get => _name; set => _name = "DVD Logo"; }
     public float _health { get => _health; set => _health = _Vision / _Speed; }
@@ -29,7 +34,7 @@ public class AI_DVD_Logo : MonoBehaviour, IAttackAI, IProjectile
     public float _AttackRange { get => _AttackRange; set => _AttackRange = attackRange; }
     public float _Speed { get => _Speed; set => _Speed = speed; }
     public float _arenaRadius { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    //public float _shotTime { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+    public float _shotTime { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
     public float _projSpeed { get => _projSpeed; set => _projSpeed = projectileSpeed; }
 
     public void Attack(GameObject proj)
