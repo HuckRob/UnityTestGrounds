@@ -358,6 +358,8 @@
 "Assets/Scripts/GIMM 400 Interface 1/AIInterface.cs"
 "Assets/Scripts/GIMM 400 Interface 1/AI_DVD_LOGO.cs"
 "Assets/Scripts/GIMM 400 Interface 1/Contenders.cs"
+"Assets/Scripts/GIMM 400 Interface 1/Enemy_AI.cs"
+"Assets/Scripts/GIMM 400 Interface 1/Gun_Attack.cs"
 "Assets/Scripts/GIMM 400 Interface 1/OLD_AI.cs"
 "Assets/Scripts/Test Script.cs"
 "Assets/SUPER Character Controller/Demo Assets/Scripts/Collectable.cs"

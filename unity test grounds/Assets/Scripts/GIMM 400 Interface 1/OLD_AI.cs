@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Old_AI : MonoBehaviour, IAttackAI, IProjectile
+public class OLD_AI : MonoBehaviour, IAttackAI, IProjectile
 {
     //Move Variables
     public float rayCastDistance = 1.0f;
@@ -20,16 +20,16 @@ public class Old_AI : MonoBehaviour, IAttackAI, IProjectile
     [SerializeField] private float projectileSpeed = 10.0f;
 
 
-    private float HEALTHMULTIPLIER = 1;
-    private float STANDARDMULTIPLIER = 1;
 
 
 
     public float _projDamage { get => _projDamage; set => _projDamage = projectileDamage; }
     public string _name { get => _name; set => _name = "DVD Logo"; }
     public float _health { get => _health; set => _health = _Vision / _Speed; }
+    private static float HEALTHMULTIPLIER = 100;
     public float _Vision { get => _Vision; set => _Vision = vision; }
     public float _damage { get => _damage; set => _damage = _AttackRange / _fireRate; }
+    private static float STANDARDMULTIPLIER = 10;
     public float _fireRate { get => _fireRate; set => _fireRate = fireRate; }
     public float _AttackRange { get => _AttackRange; set => _AttackRange = attackRange; }
     public float _Speed { get => _Speed; set => _Speed = speed; }
