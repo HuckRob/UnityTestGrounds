@@ -9,6 +9,9 @@ public class Enemy_AI : MonoBehaviour , IAttackAI
     private Gun_Attack gunAttack;   //Linking to the Gun_Attack Script
     public Vector3 projectileDirection;
 
+    public GameObject projectile;
+    
+
     //Move Variables
     public float rayCastDistance = 1.0f;
     public GameObject Character;
@@ -35,9 +38,21 @@ public class Enemy_AI : MonoBehaviour , IAttackAI
     public float _Speed { get => _Speed; set => _Speed = speed; }
     public float _arenaRadius { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
+     
     public void Attack(GameObject proj)
     {
-        throw new System.NotImplementedException();
+        var ray = new Ray(this.transform.position, direction);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 20))
+        {
+            if (hit.collider.gameObject.tag == "Enemy")
+            {
+                //Debug.Log("Hit Player");
+                gunAttack.shoot(direction);
+            }
+        }
+
+
     }
 
     public bool CanShoot()
@@ -126,7 +141,7 @@ public class Enemy_AI : MonoBehaviour , IAttackAI
     void Start()
     {
         SetRandomLocation();
-
+        gunAttack = GameObject.Find("GUN").GetComponent<Gun_Attack>();
     }
 
     // Update is called once per frame
@@ -134,7 +149,9 @@ public class Enemy_AI : MonoBehaviour , IAttackAI
     {
         projectileDirection = direction;
         Move();
-        gunAttack.shoot(this.transform.forward);
+        Attack(projectile);
+        
+        
     }
 
     //---------- Move Functions Start ---------
@@ -149,7 +166,7 @@ public class Enemy_AI : MonoBehaviour , IAttackAI
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, rayCastDistance))
         {
-            Debug.Log("Hit " + hit.collider.name);
+            //Debug.Log("Hit " + hit.collider.name);
             return true;
         }
         else

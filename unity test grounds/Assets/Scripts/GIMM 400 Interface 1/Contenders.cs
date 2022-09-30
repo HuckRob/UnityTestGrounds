@@ -72,7 +72,7 @@ public abstract class Contenders : IAttackAI, IProjectile
         _health -= amt;
         if(DeathCheck()) Die();
     }
-    public abstract void shoot(Vector3 projDirection); 
+    public abstract void shoot(Vector3 projDirection); //shoots out projectile
     /// <summary>
     /// Shoots the projectile
     /// Groups should calculate this based on time.deltatime and the timeShot variable based on fire rate
